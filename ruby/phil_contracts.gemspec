@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
   spec.metadata["changelog_uri"] = spec.homepage
-
+  spec.metadata["github_repo"] = "ssh://github.com/phil-monroe/phil_contracts"
 
   spec.files = Dir.chdir(__dir__) do
     Dir.glob(File.expand_path("lib/**/*.rb", __dir__))
@@ -25,6 +25,5 @@ Gem::Specification.new do |spec|
 
   spec.require_paths = ["lib"]
 
-  # Uncomment to register a new dependency of your gem
   spec.add_dependency "google-protobuf", '~> 3.23'
 end
