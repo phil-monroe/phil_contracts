@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# ruby
+protoc --ruby_out=./ruby/lib/phil_contracts/ --proto_path ./proto $(find ./proto -name '*.proto')

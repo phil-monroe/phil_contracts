@@ -1,0 +1,14 @@
+
+syntax = "proto3";
+
+package phil_contracts;
+
+message Foo {
+  message Bar {
+    string name = 1;
+  }
+
+  string name = 1;
+  Bar bar = 2;
+  repeated Bar bars = 3;
+}

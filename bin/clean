@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# ruby
+rm $(find ruby -name '*_pb.rb')
