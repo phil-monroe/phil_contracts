@@ -1,0 +1,25 @@
+name: Ruby Publish
+on:
+  release:
+    types: [published]
+jobs:
+  ruby-publish:
+    name: Publish Ruby Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+          working-directory: ruby
+      - name: Build gem
+        working-directory: ruby
+        run: >
+          gem build phil_contracts.gemspec --output phil_contracts.gem
+      - name: Publish gem
+        working-directory: ruby
+        run: >
+          gem push --key github \
+            --host https://rubygems.pkg.github.com/phil-monroe \
+            phil_contracts.gem
