@@ -20,6 +20,7 @@ jobs:
       - name: Publish gem
         working-directory: ruby
         run: >
+          gem sources --add https://${{ secrets.GITHUB_TOKEN }}@rubygems.pkg.github.com/phil-monroe/
           gem push --key github \
             --host https://rubygems.pkg.github.com/phil-monroe \
             phil_contracts.gem
