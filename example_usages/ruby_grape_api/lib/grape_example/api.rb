@@ -6,14 +6,15 @@ class GrapeExample::API < Grape::API
   default_error_formatter :json
 
   resource :foos do
-    desc 'create a foo'
+    desc 'create a Foo'
     # TODO: figure out how to autogenerate/autoconfigure the declared params from a contract class.
     # something like:
     #
-    # params do
-    #   # NOTE: self == Grape::Validations::ParamsScope
-    #   GrapeExample::ParamsContract.run(self, PhilContracts::Foo)
-    # end
+    #   desc 'creates a Foo', params: contract_params(PhilContracts::Foo)
+    #
+    # This is based on:
+    # - https://github.com/ruby-grape/grape-entity#using-entities
+    # - https://github.com/ruby-grape/grape/blob/master/lib/grape/dsl/desc.rb#L15
     params do
       requires :name, type: String
       optional :bar, type: Hash do
