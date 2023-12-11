@@ -11,4 +11,6 @@ message Foo {
   string name = 1;
   Bar bar = 2;
   repeated Bar bars = 3;
+
+  optional int32 number_field = 4;
 }

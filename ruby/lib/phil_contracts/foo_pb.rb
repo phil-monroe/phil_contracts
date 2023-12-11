@@ -9,6 +9,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :name, :string, 1
       optional :bar, :message, 2, "phil_contracts.Foo.Bar"
       repeated :bars, :message, 3, "phil_contracts.Foo.Bar"
+      proto3_optional :number_field, :int32, 4
     end
     add_message "phil_contracts.Foo.Bar" do
       optional :name, :string, 1

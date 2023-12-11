@@ -5,6 +5,8 @@ source "https://rubygems.org"
 gem "phil_contracts", path: '../../ruby'
 
 gem "grape"
+gem "grape-swagger"
 gem "rack-test"
 gem "rspec"
 gem "pry"
+gem "thin"
